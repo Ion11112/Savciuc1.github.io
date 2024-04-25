@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Savciuc Ion - Contacte</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/test.js">
+</head>
+
+<body>
+    <img class="back" src="../images/b.jpg" >
+    <div class="header">
+        
+        <nav>
+
+            <a class="nav-link" onclick="changeColor(this)" href="../index.html#despre">Despre</a>
+            <a class="nav-link" onclick="changeColor(this)" href="../index.html#experiență">Experienta</a>
+            <a class="nav-link" onclick="changeColor(this)" href="../index.html#educatie">Educatie</a>
+            
+            <a class="nav-link" onclick="changeColor(this)" href="">Contacte</a>
+            <img class="s1" src="../images/s.png">
+        </nav>
+
+
+
+    </div>
+
+    <div class="main">
+
+        <div class="info1">
+            <table class="tabel-contacte">
+                <tr>
+                    <td class="celula-formular">
+                        <h3 class="centered albastru">Contacteazămă</h3>
+                        <form id="formular" method="POST" action="https://sheetdb.io/api/v1/ys2jxuwpk879o">
+                            <input type="text" name="data[Nume]" class="text-input" placeholder="Nume Prenume"><br>
+                            <input type="email" name="data[Email]" class="text-input" placeholder="Email"><br>
+                            <textarea name="data[Intrebare]" class="intrebare" cols="50" rows="10"
+                                placeholder="Scrie intrebarea ta"></textarea><br>
+                            <input type="submit" class="transmite" value="Trimite"><br>
+                        </form>
+
+
+                    </td>
+
+                    <td class="celula-harta">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47513.98940458715!2d12.46308228948359!3d41.900935494488955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6053278340d5%3A0xf676f1e1cc02bbb6!2sFontana%20di%20Trevi!5e0!3m2!1sro!2s!4v1713275759972!5m2!1sro!2s"
+                            width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+                    </td>
+
+
+
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="fb-comments" data-width="100%" data-href="http://tekwill.online/sakura.tako.7" data-numposts="5"
+            data-order-by="reverse_time">
+        </div>
+
+
+        </div>
+
+
+        <footer>
+            Savciuc Ion
+        </footer>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+    
+    
+            var form = document.getElementById('formular');
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(document.getElementById("formular")),
+                }).then(() => {
+                    alert("Multumesc !");
+                    form.reset();
+                });
+            });
+        </script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic Image Change</title>
+<style>
+    #image-container {
+        width: 300px;
+        height: 300px;
+        position: relative;
+    }
+    #main-image, #second-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    #second-image {
+        opacity: 0;
+    }
+</style>
+</head>
+<body>
+
+<div id="image-container">
+    <img id="main-image" src="../images/Eu.jpg" alt="Image 1">
+    <img id="second-image" src="../images/elon.jpg" alt="Image 2">
+</div>
+
+<script>
+    var currentImage = 1;
+
+    function changeImage() {
+        var mainImage = document.getElementById("main-image");
+        var secondImage = document.getElementById("second-image");
+        
+        // Toggle opacity to switch between images
+        if (mainImage.style.opacity === "1" || mainImage.style.opacity === "") {
+            mainImage.style.opacity = "0";
+            secondImage.style.opacity = "1";
+        } else {
+            mainImage.style.opacity = "1";
+            secondImage.style.opacity = "0";
+        }
+    }
+
+    function autoChange() {
+        // Call changeImage function every 5 seconds
+        setInterval(function() {
+            changeImage();
+        }, 1000);
+    }
+
+    // Start automatic image change when page loads
+    autoChange();
+</script>
+
+</body>
+</html>
